@@ -34,6 +34,9 @@ public class PlayerMovement : MonoBehaviour
 
         transform.Translate(movement, Space.World);
 
+        //lock player rotation
+        transform.rotation = Quaternion.identity;
+
     }
 
     private void OnEnable()
@@ -74,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = true;
             rb.AddForce(new Vector2(0f, context.ReadValue<float>()), ForceMode2D.Impulse);
-            StartCoroutine(ResestJump());
+            //StartCoroutine(ResestJump());
         }
     }
 
@@ -82,5 +85,17 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         isJumping = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(isJumping)
+        {
+            if(collision.collider.tag =="Ground" )
+            {
+                isJumping = false;
+            }
+
+        }
     }
 }
