@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
@@ -11,19 +12,28 @@ public class Gun : MonoBehaviour
 
     public void OnFire()
     {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
+        float pointedAngle = (mousePos - transform.position).ToAngle();
+
+        foreach (HahaMover instance in HahaMover.all)
+        {
+            Vector3 heading = (instance.transform.position - transform.position);
+            if (heading.sqrMagnitude < range * range && Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
+            {
+                instance.TriggerSpawn();
+            }
+
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        for (int i = 1; i <= 10; i++)
-        {
-            float step = i / 10.0f;
-            Gizmos.color = Gizmos.color.WithAlpha(step);
-            Vector3 stepOffset = range * step * Vector3.right;
-            Gizmos.DrawWireSphere(transform.position + stepOffset, angle * step * 0.5f);
-        }
         Gizmos.DrawWireSphere(transform.position, range);
+
+
+
+        Gizmos.DrawLine(transform.position, Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
     }
 }
