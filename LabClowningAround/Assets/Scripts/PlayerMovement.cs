@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.ParticleSystemJobs;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumping = 0;
     public Rigidbody2D rb;
     private bool isJumping = false;
+    public ParticleSystem ballonPop;
 
 
     // Start is called before the first frame update
@@ -96,6 +98,20 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
             }
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Pickup")
+        {
+            Debug.Log("Laughing pickup activated");
+            Destroy(collision.gameObject);
+        }
+        if(collision.tag == "Balloon")
+        {
+            Instantiate(ballonPop,collision.transform.position,Quaternion.identity);
+            Destroy(collision.gameObject);
         }
     }
 }
