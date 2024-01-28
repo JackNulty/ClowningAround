@@ -10,6 +10,7 @@ TagManager:
   - Balloon
   - Tent
   - Haha
+  - Box
   layers:
   - Default
   - TransparentFX
