@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.ParticleSystemJobs;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
@@ -82,8 +83,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.tag == "Pickup")
         {
-            Debug.Log("Laughing pickup activated");
+            Debug.Log("Can now exit level");
             Destroy(collision.gameObject);
+            SceneManager.LoadScene("WinScene");
         }
         if(collision.tag == "Balloon")
         {
