@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7765656231867192758}
   - component: {fileID: 405714845657716125}
+  - component: {fileID: 4179069491285289342}
   m_Layer: 0
   m_Name: BalloonGroup
   m_TagString: Balloon
@@ -243,6 +244,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.74}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &4179069491285289342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639450936709374939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8250a100773f9b24aa8a9baac76aca49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+  particles: {fileID: 921163285623892242, guid: d85c23d09a174e140afbca75ffa6900b, type: 3}
 --- !u!1 &4172825887024496081
 GameObject:
   m_ObjectHideFlags: 0
