@@ -26,7 +26,7 @@ public class ButtonManagerScript : MonoBehaviour
 
     public void OnPlayPress()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
     public void OnQuitPress()
     {
