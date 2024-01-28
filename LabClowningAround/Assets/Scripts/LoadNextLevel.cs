@@ -5,24 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadNextLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Coroutine coroutine; // Used to lock so we don't load the level multiple times
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Tent")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(LoadNextScene());
-            Debug.Log("tent");
+            coroutine ??= StartCoroutine(LoadNextScene());
         }
     }
 
@@ -30,5 +19,6 @@ public class LoadNextLevel : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("WinScene");
+        coroutine = null;
     }
 }
