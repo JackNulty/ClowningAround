@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    public float launchForce = 3.0f;
     public float range = 5f;
     public float angle = 10f;
 
@@ -34,9 +35,11 @@ public class Gun : MonoBehaviour
         foreach (HahaSpawner instance in HahaSpawner.all)
         {
             Vector3 heading = (instance.transform.position - transform.position);
-            if (heading.sqrMagnitude < range * range && Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
+            if (heading.sqrMagnitude < 2 ||
+                heading.sqrMagnitude < range * range && 
+                Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
             {
-                instance.TriggerSpawn(heading);
+                instance.TriggerSpawn(heading.normalized * launchForce);
             }
 
         }
