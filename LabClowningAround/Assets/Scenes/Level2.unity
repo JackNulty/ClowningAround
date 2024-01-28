@@ -1597,7 +1597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7998827166345685569, guid: 4c728a8b8255e4b4ab2d1cceb2b05056, type: 3}
       propertyPath: outputAngle
-      value: 34
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8144492210567779779, guid: 4c728a8b8255e4b4ab2d1cceb2b05056, type: 3}
       propertyPath: m_Name
