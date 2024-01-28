@@ -1291,6 +1291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8522614683437873444, guid: c7b82aa9268f0e34686a8135d395db7f, type: 3}
+      propertyPath: laughTrigger
+      value: 
+      objectReference: {fileID: 2310010915323641739}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1299,6 +1303,11 @@ PrefabInstance:
 --- !u!4 &2310010915323641738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7740850044197036873, guid: c7b82aa9268f0e34686a8135d395db7f, type: 3}
+  m_PrefabInstance: {fileID: 2310010915323641737}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2310010915323641739 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3097010957572369469, guid: c7b82aa9268f0e34686a8135d395db7f, type: 3}
   m_PrefabInstance: {fileID: 2310010915323641737}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7221800865910778138
