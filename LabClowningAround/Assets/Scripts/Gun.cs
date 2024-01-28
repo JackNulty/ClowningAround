@@ -31,12 +31,12 @@ public class Gun : MonoBehaviour
         vfx.transform.rotation = Quaternion.Euler(0, 0, pointedAngle);
         vfx.Play();
 
-        foreach (HahaMover instance in HahaMover.all)
+        foreach (HahaSpawner instance in HahaSpawner.all)
         {
             Vector3 heading = (instance.transform.position - transform.position);
             if (heading.sqrMagnitude < range * range && Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
             {
-                instance.TriggerSpawn();
+                instance.TriggerSpawn(heading);
             }
 
         }
@@ -48,7 +48,9 @@ public class Gun : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
 
 
-
-        Gizmos.DrawLine(transform.position, Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
+        Vector2 rayDir = Quaternion.Euler(0, 0, angle) * Vector2.right;
+        Gizmos.DrawRay(transform.position, rayDir * range);
+        rayDir.y *= -1;
+        Gizmos.DrawRay(transform.position, rayDir * range);
     }
 }

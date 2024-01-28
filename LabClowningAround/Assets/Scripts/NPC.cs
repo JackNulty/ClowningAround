@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
 public class NPC : MonoBehaviour
 {
     /* Properties */
@@ -18,7 +18,10 @@ public class NPC : MonoBehaviour
     public float acceleration = 1;
 
     /* References */
+    [Header("References")]
     private Rigidbody2D rb;
+    private Animator animator;
+    public SpriteRenderer mainSprite;
 
     /* State */
     private bool isMovingRight = true;
@@ -27,6 +30,7 @@ public class NPC : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
         isMovingRight = moveRightAtStart;
     }
@@ -38,6 +42,7 @@ public class NPC : MonoBehaviour
 
         CheckTurn();        // See if NPC needs to turn
         ApplyVelocity();    // Ensure RB velocity is what it needs to be
+        ApplyAnimation();   // Applies velocity/direction to sprite animation
     }
 
     private void CheckTurn()
@@ -63,6 +68,13 @@ public class NPC : MonoBehaviour
         rb.AddForce(new Vector2(velocityDifference, 0), ForceMode2D.Force);
     }
 
+    private void ApplyAnimation()
+    {
+        mainSprite.flipX = rb.velocity.x > 0;
+
+        float walkSpeed = rb.velocity.magnitude / moveSpeed;
+        animator.SetFloat("WalkSpeed", walkSpeed*1.5f);
+    }
 
     private void OnDrawGizmos()
     {
