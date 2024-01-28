@@ -18,6 +18,7 @@ public class NPC : MonoBehaviour
     public float acceleration = 1;
 
     /* References */
+    [Header("References")]
     private Rigidbody2D rb;
 
     /* State */
@@ -62,8 +63,7 @@ public class NPC : MonoBehaviour
 
         rb.AddForce(new Vector2(velocityDifference, 0), ForceMode2D.Force);
     }
-
-
+    
     private void OnDrawGizmos()
     {
         if (!canMove)
