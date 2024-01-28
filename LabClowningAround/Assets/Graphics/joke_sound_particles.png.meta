@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 335ab5e8503afea4f97071c60ecf4aba
+guid: d0b53424a4f28af4ea90ac6e6b20274a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,85 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: microphone_spritesheet_0
+      name: joke_sound_particles_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 29
-        height: 76
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53e2080159275dd459542b4b2a46a758
-      internalID: -1019373329
+      spriteID: 3023ed427e3212145b232492d2796e41
+      internalID: -623110436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: microphone_spritesheet_1
+      name: joke_sound_particles_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
-        width: 29
-        height: 76
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8df73ed5fb10c9843bab8684faa40ef9
-      internalID: 1200112167
+      spriteID: af7efe1f45fd42347bba398efdcad982
+      internalID: -1044450278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: microphone_spritesheet_2
+      name: joke_sound_particles_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
-        width: 28
-        height: 75
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 746d54afdbb7d3741a5b912bd159f0df
-      internalID: 1134162718
+      spriteID: d49e470933fc83f44902840a15462f4a
+      internalID: 1874040607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: microphone_spritesheet_3
+      name: joke_sound_particles_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
-        width: 29
-        height: 76
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66b2d040970e9c84e86462c3b236ce0c
-      internalID: -2025295222
+      spriteID: ae6bd2ee8551d84458e3fc27518e1b08
+      internalID: -452873698
       vertices: []
       indices: 
       edges: []
@@ -217,10 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      microphone_spritesheet_0: -1019373329
-      microphone_spritesheet_1: 1200112167
-      microphone_spritesheet_2: 1134162718
-      microphone_spritesheet_3: -2025295222
+      joke_sound_particles_0: -623110436
+      joke_sound_particles_1: -1044450278
+      joke_sound_particles_2: 1874040607
+      joke_sound_particles_3: -452873698
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

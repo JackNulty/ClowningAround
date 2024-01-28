@@ -35,7 +35,9 @@ public class Gun : MonoBehaviour
         foreach (HahaSpawner instance in HahaSpawner.all)
         {
             Vector3 heading = (instance.transform.position - transform.position);
-            if (heading.sqrMagnitude < range * range && Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
+            if (heading.sqrMagnitude < 2 ||
+                heading.sqrMagnitude < range * range && 
+                Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
             {
                 instance.TriggerSpawn(heading.normalized * launchForce);
             }
