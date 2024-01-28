@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.ParticleSystemJobs;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerMovement : MonoBehaviour
@@ -75,5 +76,19 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, Vector2.down * groundDistance);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Pickup")
+        {
+            Debug.Log("Laughing pickup activated");
+            Destroy(collision.gameObject);
+        }
+        if(collision.tag == "Balloon")
+        {
+            Instantiate(ballonPop,collision.transform.position,Quaternion.identity);
+            Destroy(collision.gameObject);
+        }
     }
 }
