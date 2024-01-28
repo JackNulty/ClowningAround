@@ -85,7 +85,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Can now exit level");
             Destroy(collision.gameObject);
-            SceneManager.LoadScene("WinScene");
+
+            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
         if(collision.tag == "Balloon")
         {
