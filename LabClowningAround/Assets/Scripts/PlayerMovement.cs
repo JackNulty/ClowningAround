@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(collision.tag == "Balloon")
         {
-            Instantiate(ballonPop,collision.transform.position,Quaternion.identity);
+            //Instantiate(ballonPop,collision.transform.position,Quaternion.identity);
             Destroy(collision.gameObject);
         }
     }
