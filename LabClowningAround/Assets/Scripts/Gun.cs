@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Gun : MonoBehaviour
 {
+    public float launchForce = 3.0f;
     public float range = 5f;
     public float angle = 10f;
 
@@ -36,7 +37,7 @@ public class Gun : MonoBehaviour
             Vector3 heading = (instance.transform.position - transform.position);
             if (heading.sqrMagnitude < range * range && Mathf.Abs(pointedAngle - heading.ToAngle()) < angle)
             {
-                instance.TriggerSpawn(heading);
+                instance.TriggerSpawn(heading.normalized * launchForce);
             }
 
         }
